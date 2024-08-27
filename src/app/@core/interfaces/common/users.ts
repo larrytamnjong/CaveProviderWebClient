@@ -17,5 +17,5 @@ export interface Login{
 
 
 export abstract class UserData {
-  abstract getCurrentUser(): Observable<User>;
+  abstract getSignedInUserDetails(): Observable<User>;
 }

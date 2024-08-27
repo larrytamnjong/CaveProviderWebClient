@@ -6,10 +6,10 @@ import { HttpService } from '../api/http.service';
 import { NbAuthModule } from '@nebular/auth';
 import { UserData } from '../interfaces/common/users';
 import { UsersService } from '../services/users.service';
-import { PermissionApi } from '../api/permission.api';
+import { RoleApi } from '../api/role.api';
 
 
-const API = [UsersApi, PermissionApi, HttpService];
+const API = [UsersApi, RoleApi, HttpService];
 
 const SERVICES = [
 

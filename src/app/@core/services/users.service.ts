@@ -16,8 +16,8 @@ export class UsersService extends UserData {
   }
 
 
-  getCurrentUser(): Observable<User>{
-    return this.api.getCurrentUser();
+  getSignedInUserDetails(): Observable<User>{
+    return this.api.getSignedInUserDetails();
   }
 
   

@@ -10,8 +10,8 @@ export class UsersApi {
 
   constructor(private api: HttpService) {}
 
-  getCurrentUser(): Observable<any>{
-     return this.api.get(`${this.apiController}/getsignedinuser`);
+  getSignedInUserDetails(): Observable<any>{
+     return this.api.get(`${this.apiController}/getsignedinuserdetails`);
   }
 
  

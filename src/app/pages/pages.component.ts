@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MENU_ITEMS } from './pages-menu';  
-import { PermissionData } from '../@core/interfaces/common/permission';
+import { RoleData } from '../@core/interfaces/common/role';
 import { error } from 'console';
 
 @Component({
@@ -12,16 +12,16 @@ export class PagesComponent implements OnInit {
   menu = [];
 
   constructor(  
-    private permissionData: PermissionData
+    private roleData: RoleData
   ) {}
 
   ngOnInit(): void {
     this.updateMenuVisibility();
   }
   updateMenuVisibility(): void {
-    this.permissionData.getUserPermissionNames().subscribe(permissions => {
-      const userPermissions = Array.isArray(permissions) ? permissions.map(permissions => permissions) : [permissions];
-      this.menu = this.filterMenuItems(MENU_ITEMS, userPermissions);
+    this.roleData.getSignedInUserRoles().subscribe(roles => {
+      const userRole = Array.isArray(roles) ? roles.map(roles => roles) : [roles];
+      this.menu = this.filterMenuItems(MENU_ITEMS, userRole);
     },
     error => {
       this.menu = this.filterMenuItems(MENU_ITEMS, [])
@@ -31,14 +31,14 @@ export class PagesComponent implements OnInit {
   }
 
 
-  filterMenuItems(menuItems: any[], userPermissions: string[]): any[] {
+  filterMenuItems(menuItems: any[], userRole: string[]): any[] {
     return menuItems.map(item => {
       let isHidden = false;
       if (item.data && item.data.permission) {
-        isHidden = !userPermissions.includes(item.data.permission);
+        isHidden = !userRole.includes(item.data.permission);
       }
       if (item.children) {
-        item.children = this.filterMenuItems(item.children, userPermissions);
+        item.children = this.filterMenuItems(item.children, userRole);
         if (isHidden) {
           item.children = item.children.map(child => ({ ...child, hidden: true }));
         }

@@ -30,24 +30,5 @@ export const authSettings = {
     view: ["Student"],
     edit: ["Student"],
   },
-  superAdministrator: {
-    view: [
-      "School Setup",
-      "Result",
-      "Staff",
-      "Settings",
-      "Report Card",
-      "Transcript",
-      "Student",
-    ],
-    edit: [
-      "School Setup",
-      "Result",
-      "Staff",
-      "Settings",
-      "Report Card",
-      "Transcript",
-      "Student",
-    ],
-  },
+ 
 };

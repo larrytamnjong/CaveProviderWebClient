@@ -13,7 +13,7 @@ export class UsersService extends UserData {
     return new LocalDataSource(this.data);
   }
 
-  getCurrentUser(): Observable<User> {
+  getSignedInUserDetails(): Observable<User> {
     return observableOf(this.data[0]);
   }
 

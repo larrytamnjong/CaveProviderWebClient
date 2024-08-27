@@ -1,15 +1,29 @@
 import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
 import { NbAuthService } from '@nebular/auth';
-import { PermissionData } from '../@core/interfaces/common/permission';
+import { RoleData } from '../@core/interfaces/common/role';
 import {  of } from 'rxjs';
 import { map, switchMap, catchError } from 'rxjs/operators';
+import { NbRoleProvider } from '@nebular/security';
 
 export function RouteGuard(requiredPermission: string): CanActivateFn {
   return (route, state) => {
     const authService = inject(NbAuthService);
-    const permissionData = inject(PermissionData);
+    const roleData = inject(RoleData);
     const router = inject(Router);
+    const roleProvider = inject(NbRoleProvider);
+   
+   
+    // roleProvider.getRole()
+    // .pipe(
+    //   map(role => {
+    //     const roles = role instanceof Array ? role : [role];
+    //     return roles;
+    //   })
+    // )
+    // .subscribe(roles => {
+   
+    // });
 
     return authService.isAuthenticated().pipe(
       switchMap((authenticated) => {
@@ -17,9 +31,9 @@ export function RouteGuard(requiredPermission: string): CanActivateFn {
           router.navigate(['auth/login']);
           return of(false);
         } else {
-          return permissionData.getUserPermissionNames().pipe(
-            map((permissions: string[]) => {
-              if (permissions.includes(requiredPermission)) {
+          return roleData.getSignedInUserRoles().pipe(
+            map((roles: string[]) => {
+              if (roles.includes(requiredPermission)) {
                 return true;
               } else {
                 router.navigate(['pages/404']); 

@@ -23,9 +23,9 @@ import { authSettings } from './access.settings';
 import { AuthPipe } from './auth.pipe';
 import { RoleProvider } from './role.provider';
 import { NbRoleProvider, NbSecurityModule } from '@nebular/security';
-import { PermissionData } from '../@core/interfaces/common/permission';
+import { RoleData } from '../@core/interfaces/common/role';
 import { useAnimation } from '@angular/animations';
-import { PermissionService } from '../@core/services/permission.service';
+import { RoleService } from '../@core/services/role.service';
 
 
 
@@ -69,7 +69,7 @@ export function filterInterceptorRequest(req: HttpRequest<any>): boolean {
     }).providers,
     {provide: NbRoleProvider, useClass: RoleProvider},
     {provide: NbTokenLocalStorage, useClass: NbTokenLocalStorage},
-    {provide: PermissionData, useClass: PermissionService}, 
+    {provide: RoleData, useClass: RoleService}, 
   ],
 })
 export class AuthModule {

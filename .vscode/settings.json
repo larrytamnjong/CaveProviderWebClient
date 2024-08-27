@@ -2,9 +2,13 @@
     "typescript.tsdk": "./node_modules/typescript/lib",
     "tslint.enable": false,
     "cSpell.words": [
+        "getcurrentuserroles",
         "getsignedinuser",
+        "getsignedinuserdetails",
+        "getsignedinuserroles",
         "getuser",
         "getuserpermissionnames",
+        "getuserrole",
         "signin",
         "signout",
         "Toastr"

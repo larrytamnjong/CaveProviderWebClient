@@ -39,7 +39,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
 
-    this.userService.getCurrentUser().subscribe((user) => {
+    this.userService.getSignedInUserDetails().subscribe((user) => {
       this.user = user;
     },
     error => {
