@@ -43,7 +43,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
       this.user = user;
     },
     error => {
-      alert("Could not connect to the API")
+      alert("An Error Occurred")
     }
 
   );

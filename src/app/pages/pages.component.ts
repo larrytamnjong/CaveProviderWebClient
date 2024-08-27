@@ -25,7 +25,7 @@ export class PagesComponent implements OnInit {
     },
     error => {
       this.menu = this.filterMenuItems(MENU_ITEMS, [])
-      alert("Could not connect to the API")
+      alert("An Error Occurred")
     }
   )
   }

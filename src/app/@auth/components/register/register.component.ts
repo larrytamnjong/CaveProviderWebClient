@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NB_AUTH_OPTIONS, NbAuthSocialLink, NbAuthService, NbAuthResult, NbTokenStorage } from '@nebular/auth';
 import { getDeepFromObject } from '../../helpers';
-import { EMAIL_PATTERN } from '../constants';
+import { EMAIL_PATTERN, NUMBERS_PATTERN} from '../constants';
 
 @Component({
   selector: 'ngx-register',
@@ -62,10 +62,14 @@ export class NgxRegisterComponent implements OnInit {
         Validators.pattern(EMAIL_PATTERN),
       ];
 
+      const phoneNumberValidators = [
+        Validators.pattern(NUMBERS_PATTERN),
+      ]
+
 
     this.isFamilyNameRequired && requiredValidators.push(Validators.required);
     this.isGivenNameRequired && requiredValidators.push(Validators.required);
-    this.isPhoneNumberRequired && requiredValidators.push(Validators.required);
+    this.isPhoneNumberRequired && phoneNumberValidators.push(Validators.required);
     this.isUserNameRequired && requiredValidators.push(Validators.required);
     this.isEmailRequired && emailValidators.push(Validators.required);
     this.isPasswordRequired && passwordValidators.push(Validators.required);
@@ -73,7 +77,7 @@ export class NgxRegisterComponent implements OnInit {
     this.registerForm = this.fb.group({
       familyName: this.fb.control('', [...requiredValidators]),
       givenName: this.fb.control('', [...requiredValidators]),
-      phoneNumber: this.fb.control('', [...requiredValidators]),
+      phoneNumber: this.fb.control('', [...phoneNumberValidators]),
       userName: this.fb.control('', [...requiredValidators]),
       email: this.fb.control('', [...emailValidators]),
       password: this.fb.control('', [...passwordValidators]),
