@@ -15,7 +15,7 @@ const routes: Routes = [{
     {
       path: 'stepper',
       component: StepperComponent,
-      canActivate: [RouteGuard('School Setup')]
+      canActivate: [RouteGuard('Institution Setup')]
     },
     {
       path: 'list',

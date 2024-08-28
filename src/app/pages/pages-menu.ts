@@ -12,58 +12,38 @@ export const MENU_ITEMS: NbMenuItem[] = [
     group: true,
   },
   {
-    title: 'School Setup', //title: 'Layout',
-    icon: 'settings-outline',
+    title: 'Institution Setup', 
+    icon: 'settings-2-outline',
     data: {
-      permission: 'School Setup'
+      permission: 'Institution Setup'
     },
     children: [
       {
-        title: 'Stepper',
-        link: '/pages/layout/stepper',
+        title: 'Institution Info',
+        link: '/pages/institution-setup/institution-information',
       },
       {
-        title: 'List',
+        title: 'Academic Period', //'Tabs',
+        link: '/pages/layout/tabs',
+      },
+      {
+        title: 'Section', // 'List'
         link: '/pages/layout/list',
       },
       {
-        title: 'Infinite List',
+        title: 'Department',//'Infinite List'
         link: '/pages/layout/infinite-list',
+        
       },
       {
-        title: 'Accordion',
+        title: 'Class',  //'Accordion',
         link: '/pages/layout/accordion',
       },
       {
-        title: 'Tabs',
-        pathMatch: 'prefix',
+        title: 'Course', //'Tabs',
         link: '/pages/layout/tabs',
       },
-    ],
-  },
-  {
-    title: 'Result', //title: 'Forms',
-    icon: 'edit-2',
-    data: {
-      permission: 'Result'
-    },
-    children: [
-      {
-        title: 'Form Inputs',
-        link: '/pages/forms/inputs',
-      },
-      {
-        title: 'Form Layouts',
-        link: '/pages/forms/layouts',
-      },
-      {
-        title: 'Buttons',
-        link: '/pages/forms/buttons',
-      },
-      {
-        title: 'Datepicker',
-        link: '/pages/forms/datepicker',
-      },
+      
     ],
   },
   {
@@ -92,6 +72,57 @@ export const MENU_ITEMS: NbMenuItem[] = [
       },
     ],
   },
+  {
+    title: 'Student', // title: 'Maps',
+    icon: 'people',
+    data: {
+      permission: 'Student'
+    },
+    children: [
+      {
+        title: 'Google Maps',
+        link: '/pages/maps/gmaps',
+      },
+      {
+        title: 'Leaflet Maps',
+        link: '/pages/maps/leaflet',
+      },
+      {
+        title: 'Bubble Maps',
+        link: '/pages/maps/bubble',
+      },
+      {
+        title: 'Search Maps',
+        link: '/pages/maps/searchmap',
+      },
+    ],
+  },
+  {
+    title: 'Result', //title: 'Forms',
+    icon: 'edit-2',
+    data: {
+      permission: 'Result'
+    },
+    children: [
+      {
+        title: 'Form Inputs',
+        link: '/pages/forms/inputs',
+      },
+      {
+        title: 'Form Layouts',
+        link: '/pages/forms/layouts',
+      },
+      {
+        title: 'Buttons',
+        link: '/pages/forms/buttons',
+      },
+      {
+        title: 'Datepicker',
+        link: '/pages/forms/datepicker',
+      },
+    ],
+  },
+  
   {
     title: 'Report Card', //title: 'Modal & Overlays',
     icon: 'file',
@@ -123,7 +154,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   },
   {
     title: 'Transcript', //title: 'Extra Components',
-    icon: 'file',
+    icon: 'folder-outline',
     data: {
       permission: 'Transcript'
     },
@@ -155,33 +186,51 @@ export const MENU_ITEMS: NbMenuItem[] = [
     ],
   },
   {
-    title: 'Student', // title: 'Maps',
-    icon: 'people',
+    title: 'Bursary', //Charts
+    icon: 'credit-card-outline',
     data: {
-      permission: 'Student'
+      permission: 'Bursary'
     },
     children: [
       {
-        title: 'Google Maps',
-        link: '/pages/maps/gmaps',
+        title: 'Echarts',
+        link: '/pages/charts/echarts',
       },
       {
-        title: 'Leaflet Maps',
-        link: '/pages/maps/leaflet',
+        title: 'Charts.js',
+        link: '/pages/charts/chartjs',
       },
       {
-        title: 'Bubble Maps',
-        link: '/pages/maps/bubble',
-      },
-      {
-        title: 'Search Maps',
-        link: '/pages/maps/searchmap',
+        title: 'D3',
+        link: '/pages/charts/d3',
       },
     ],
   },
   {
+    title: 'Accounting', //Charts
+    icon: 'bar-chart-outline',
+    data: {
+      permission: 'Accounting'
+    },
+    children: [
+      {
+        title: 'Echarts',
+        link: '/pages/charts/echarts',
+      },
+      {
+        title: 'Charts.js',
+        link: '/pages/charts/chartjs',
+      },
+      {
+        title: 'D3',
+        link: '/pages/charts/d3',
+      },
+    ],
+  },
+
+  {
     title: 'Settings', //Charts
-    icon: 'settings-outline',
+    icon: 'person-outline',
     data: {
       permission: 'Settings'
     },

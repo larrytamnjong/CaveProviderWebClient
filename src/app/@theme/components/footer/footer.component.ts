@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.scss'],
   template: `
     <span class="created-by">
-      School Management Software © 2024
+      CaveProvider © 2024  v0.0.0
     </span>
     <div class="socials">
       <a href="https://github.com/larrytamnjong" target="_blank" class="ion ion-social-github"></a>

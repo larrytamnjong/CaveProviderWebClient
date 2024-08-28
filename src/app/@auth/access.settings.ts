@@ -3,8 +3,8 @@ export const authSettings = {
 
   },
   schoolSetup: {
-    view: ["School Setup"],
-    edit: ["School Setup"],
+    view: ["Institution Setup"],
+    edit: ["Institution Setup"],
   },
   result: {
     view: ["Result"],
@@ -29,6 +29,14 @@ export const authSettings = {
   student: {
     view: ["Student"],
     edit: ["Student"],
+  },
+  bursary: {
+    view: ["Bursary"],
+    edit: ["Bursary"],
+  },
+  accounting: {
+    view: ["Accounting"],
+    edit: ["Accounting"],
   },
  
 };

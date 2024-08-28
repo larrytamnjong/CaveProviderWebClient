@@ -1,9 +1,9 @@
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
-
 import { PagesComponent } from './pages.component';
-import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
+import { InstitutionSetupComponent } from './institution-setup/institution-setup.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [{
   path: '',
@@ -11,9 +11,14 @@ const routes: Routes = [{
   children: [
     {
       path: 'dashboard',
-      component: ECommerceComponent,
+      component: DashboardComponent,
     },
-    
+    {
+      path: 'institution-setup',
+      component: InstitutionSetupComponent,
+      loadChildren: () => import('./institution-setup/institution-setup.module')
+      .then(module=> module.InstitutionSetupModule)
+    },
     {
       path: 'layout',
       loadChildren: () => import('./layout/layout.module')
