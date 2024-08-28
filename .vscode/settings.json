@@ -2,7 +2,9 @@
     "typescript.tsdk": "./node_modules/typescript/lib",
     "tslint.enable": false,
     "cSpell.words": [
+        "addorupdateinstitutiondetails",
         "getcurrentuserroles",
+        "getinstitutiondetails",
         "getsignedinuser",
         "getsignedinuserdetails",
         "getsignedinuserroles",

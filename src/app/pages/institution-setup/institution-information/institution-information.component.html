@@ -4,35 +4,34 @@
     <nb-card>
       <nb-card-header>Make changes to your institution's primary information</nb-card-header>
       <nb-card-body>
-        <form>
           <div class="row styled-grid">
             <div class="form-group col-md-6 col-12">
               <label for="code" class="label">Code</label>
-              <input type="text" nbInput fullWidth placeholder="Code" [disabled]="true">
+              <input type="text" nbInput fullWidth placeholder="Code" [disabled]="true" [(ngModel)]="institutionDetails.code">
             </div>
             <div class="form-group col-md-6 col-12">
-              <label for="alternative-code" class="label">Alternative Code</label>
-              <input type="text" nbInput fullWidth placeholder="Alternative Code">
+              <label for="alternative-code" class="label" >Alternative Code</label>
+              <input type="text" nbInput fullWidth placeholder="Alternative Code" [(ngModel)]="institutionDetails.alternativeCode">
             </div>
             <div class="form-group col-md-6 col-12">
-              <label for="institution-name" class="label">Institution Name</label>
-              <input type="text" nbInput fullWidth placeholder="Institution Name">
+              <label for="institution-name" class="label" >Institution Name</label>
+              <input type="text" nbInput fullWidth placeholder="Institution Name" [(ngModel)]="institutionDetails.name">
             </div>
             <div class="form-group col-md-6 col-12">
               <label for="phone-number" class="label">Phone Number</label>
-              <input type="number" nbInput fullWidth placeholder="Phone Number">
+              <input type="string" nbInput fullWidth placeholder="Phone Number" [(ngModel)]="institutionDetails.phoneNumber">
             </div>
             <div class="form-group col-md-6 col-12">
-              <label for="email" class="label">Email Address</label>
-              <input type="email" nbInput fullWidth placeholder="Email Address">
+              <label for="email" class="label">Email</label>
+              <input type="email" nbInput fullWidth placeholder="Email" [(ngModel)]="institutionDetails.email">
             </div>
             <div class="form-group col-md-6 col-12">
               <label for="physical-address" class="label">Physical Address</label>
-              <input type="text" nbInput fullWidth placeholder="Physical Address">
+              <input type="text" nbInput fullWidth placeholder="Physical Address" [(ngModel)]="institutionDetails.physicalAddress">
             </div>
             <div class="form-group col-md-6 col-12">
               <label for="post-box-address" class="label">Post Box Address</label>
-              <input type="text" nbInput fullWidth placeholder="Post Box Address">
+              <input type="text" nbInput fullWidth placeholder="Post Box Address" [(ngModel)]="institutionDetails.postBoxAddress">
             </div>
             <div class="form-group col-md-6 col-12">
               <label for="school-logo" class="label">School Logo</label>
@@ -40,9 +39,8 @@
             </div>
           </div>
           <div>
-             <button class="float-right" nbButton status="primary" [disabled]="false"><nb-icon icon="save"></nb-icon>Save Details</button>
+             <button class="float-right" nbButton status="primary" [disabled]="false" (click)="addOrUpdateInstitutionDetails()"><nb-icon icon="save"></nb-icon>Save Details</button>
           </div>
-        </form>
       </nb-card-body>
     </nb-card>
   </div>

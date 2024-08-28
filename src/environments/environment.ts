@@ -8,6 +8,6 @@ export const environment = {
 
   production: false,
   
-  apiUrl: "http://localhost:32000/api",
+  apiUrl: "https://localhost:32100/api",
   identityUrl: "https://localhost:30100/api",
 };

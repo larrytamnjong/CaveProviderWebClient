@@ -32,7 +32,8 @@ import { InstitutionInformationComponent } from './institution-information/insti
     NbSelectModule,
     NbIconModule,
     ngFormsModule,
-    InstitutionRoutingModule
+    InstitutionRoutingModule,
+    
   
   ],
   declarations: [

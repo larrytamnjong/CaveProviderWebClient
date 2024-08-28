@@ -7,7 +7,7 @@ import { environment } from '../../../environments/environment';
 
 
 @Injectable()
-export class HttpService {
+export class IdentityHttpService {
 
   get identityUrl(): string {
     return environment.identityUrl;
