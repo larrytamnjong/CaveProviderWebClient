@@ -1,5 +1,6 @@
 import { Observable } from "rxjs";
-export class Institution{
+export class Institution {
+    id: string;
     code: string;
     alternativeCode: string;
     name: string;
@@ -7,7 +8,7 @@ export class Institution{
     postBoxAddress: string;
     email: string;
     phoneNumber: string;
-    id: string;
+    logo: string;
 }
 
 

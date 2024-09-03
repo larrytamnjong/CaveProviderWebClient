@@ -1,5 +1,8 @@
 import { Component, OnInit, ChangeDetectorRef } from "@angular/core";
 import { NbToastrService, NbComponentStatus } from '@nebular/theme';
+import { DomSanitizer } from '@angular/platform-browser';
+
+
 import {
   Institution,
   InstitutionData,
@@ -12,8 +15,9 @@ import {
 })
 export class InstitutionInformationComponent implements OnInit {
   institutionDetails: Institution = new Institution();
+  imageSource: any;
   canSave: boolean = false;
-  constructor(private institutionData: InstitutionData,  private cd: ChangeDetectorRef,private toastService: NbToastrService) {}
+  constructor(private institutionData: InstitutionData,  private cd: ChangeDetectorRef,private toastService: NbToastrService, private sanitizer: DomSanitizer) {}
   ngOnInit(): void {
     this.getInstitutionDetails();
   }
@@ -21,7 +25,10 @@ export class InstitutionInformationComponent implements OnInit {
   getInstitutionDetails() {
     this.institutionData.getInstitutionDetails().subscribe(
       (information: Institution) => {
-        this.institutionDetails = information;
+        if(information != null){
+          this.institutionDetails = information;
+          this.setImageSource(information.logo); 
+        }
       },
       (error) => {
         this.showFailureToast('danger');
@@ -32,17 +39,33 @@ export class InstitutionInformationComponent implements OnInit {
   }
 
   addOrUpdateInstitutionDetails() {
-    this.institutionData
+    if (window.confirm('Are you sure you want to update the institution details?')) {
+      this.institutionData
       .addOrUpdateInstitutionDetails(this.institutionDetails)
       .subscribe(
         (information) => {
-          this.institutionDetails = information;
-          this.showSuccessToast('success');
+          if(information != null){
+            this.institutionDetails = information;
+            this.showSuccessToast('success');
+            this.setImageSource(information.logo);  
+          }
         },
         (error) => {
           this.showFailureToast('danger');
         }
       );
+    } 
+    
+  }
+
+  onImageSelected(event: any) {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      this.institutionDetails.logo = reader.result as string;
+     this.setImageSource(this.institutionDetails.logo); 
+    };
   }
 
   showSuccessToast(status: NbComponentStatus) {
@@ -51,4 +74,9 @@ export class InstitutionInformationComponent implements OnInit {
   showFailureToast(status: NbComponentStatus) {
     this.toastService.show(status, `Details where not updated`, { status });
   }
+
+  setImageSource(logo: string) {
+    this.imageSource = this.sanitizer.bypassSecurityTrustUrl(logo);
+    };
+  
 }

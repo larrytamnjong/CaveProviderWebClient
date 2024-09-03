@@ -43,3 +43,19 @@
 nb-card.inline-form-card nb-card-body {
   padding-bottom: 0;
 }
+
+.image-wrapper {
+  text-align: center; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: nb-theme(background-basic-color-2);
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+
+  img {
+    width: 180px;  
+    height: 180px;
+    object-fit: contain;     
+  }
+}
