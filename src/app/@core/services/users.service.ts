@@ -3,7 +3,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { UsersApi } from '../api/users.api';
-import { UserData, User, Login } from '../interfaces/common/users';
+import { UserData, User, Login } from '../interfaces/users';
 
 import { NbAuthService } from '@nebular/auth';
 

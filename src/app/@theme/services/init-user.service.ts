@@ -1,6 +1,6 @@
 
 import { Observable } from 'rxjs';
-import { User, UserData } from '../../@core/interfaces/common/users';
+import { User, UserData } from '../../@core/interfaces/users';
 import { tap } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { NbJSThemesRegistry, NbThemeService } from '@nebular/theme';

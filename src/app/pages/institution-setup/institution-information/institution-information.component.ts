@@ -8,7 +8,7 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 import {
   Institution,
   InstitutionData,
-} from "../../../@core/interfaces/common/institution";
+} from "../../../@core/interfaces/institution";
 
 @Component({
   selector: "ngx-institution-information",

@@ -23,7 +23,7 @@ import { authSettings } from './access.settings';
 import { AuthPipe } from './auth.pipe';
 import { RoleProvider } from './role.provider';
 import { NbRoleProvider, NbSecurityModule } from '@nebular/security';
-import { RoleData } from '../@core/interfaces/common/role';
+import { RoleData } from '../@core/interfaces/role';
 import { useAnimation } from '@angular/animations';
 import { RoleService } from '../@core/services/role.service';
 

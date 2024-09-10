@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { UsersApi } from '../api/users.api';
 
-import { InstitutionData } from '../interfaces/common/institution';
+import { InstitutionData } from '../interfaces/institution';
 import { InstitutionApi } from '../api/institution.api';
 
 

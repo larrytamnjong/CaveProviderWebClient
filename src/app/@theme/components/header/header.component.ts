@@ -4,7 +4,7 @@ import { LayoutService } from '../../../@core/utils';
 import { map, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import { UsersService } from '../../../@core/services/users.service';
-import { UserData } from '../../../@core/interfaces/common/users';
+import { UserData } from '../../../@core/interfaces/users';
 
 @Component({
   selector: 'ngx-header',

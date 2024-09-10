@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MENU_ITEMS } from './pages-menu';  
-import { RoleData } from '../@core/interfaces/common/role';
+import { RoleData } from '../@core/interfaces/role';
 import { error } from 'console';
 
 @Component({

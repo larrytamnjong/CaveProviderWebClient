@@ -1,7 +1,7 @@
 import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
 import { NbAuthService } from '@nebular/auth';
-import { RoleData } from '../@core/interfaces/common/role';
+import { RoleData } from '../@core/interfaces/role';
 import {  of } from 'rxjs';
 import { map, switchMap, catchError } from 'rxjs/operators';
 import { NbRoleProvider } from '@nebular/security';

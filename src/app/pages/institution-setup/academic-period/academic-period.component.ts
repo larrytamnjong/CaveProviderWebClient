@@ -14,7 +14,7 @@ import { NbCalendarRange, NbDateService } from '@nebular/theme';
 import {
   Institution,
   InstitutionData,
-} from "../../../@core/interfaces/common/institution";
+} from "../../../@core/interfaces/institution";
 
 @Component({
   selector: "ngx-academic-period",
