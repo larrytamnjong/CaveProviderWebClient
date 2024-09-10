@@ -20,50 +20,46 @@ const routes: Routes = [{
       .then(module=> module.InstitutionSetupModule)
     },
     {
-      path: 'layout',
-      loadChildren: () => import('./layout/layout.module')
-        .then(m => m.LayoutModule),
+      path: 'staff',
+      loadChildren: () => import('./staff/staff.module')
+        .then(m => m.StaffModule),
     },
     {
-      path: 'forms',
-      loadChildren: () => import('./forms/forms.module')
-        .then(m => m.FormsModule),
+      path: 'student',
+      loadChildren: () => import('./student/student.module')
+        .then(m => m.StudentModule),
     },
     {
-      path: 'ui-features',
-      loadChildren: () => import('./ui-features/ui-features.module')
-        .then(m => m.UiFeaturesModule),
+      path: 'result',
+      loadChildren: () => import('./result/result.module')
+        .then(m => m.ResultModule),
     },
     {
-      path: 'modal-overlays',
-      loadChildren: () => import('./modal-overlays/modal-overlays.module')
-        .then(m => m.ModalOverlaysModule),
+      path: 'report-card',
+      loadChildren: () => import('./report-card/report-card.module')
+        .then(m => m.ReportCardModule),
     },
     {
-      path: 'extra-components',
-      loadChildren: () => import('./extra-components/extra-components.module')
-        .then(m => m.ExtraComponentsModule),
+      path: 'transcript',
+      loadChildren: () => import('./transcript/transcript.module')
+        .then(m => m.TranscriptModule),
     },
     {
-      path: 'maps',
-      loadChildren: () => import('./maps/maps.module')
-        .then(m => m.MapsModule),
+      path: 'bursary',
+      loadChildren: () => import('./bursary/bursary.module')
+        .then(m => m.BursaryModule),
     },
     {
-      path: 'charts',
-      loadChildren: () => import('./charts/charts.module')
-        .then(m => m.ChartsModule),
+      path: 'accounting',
+      loadChildren: () => import('./accounting/accounting.module')
+        .then(m => m.AccountingModule),
     },
     {
-      path: 'editors',
-      loadChildren: () => import('./editors/editors.module')
-        .then(m => m.EditorsModule),
+      path: 'settings',
+      loadChildren: () => import('./settings/settings.module')
+        .then(m => m.SettingsModule),
     },
-    {
-      path: 'tables',
-      loadChildren: () => import('./tables/tables.module')
-        .then(m => m.TablesModule),
-    },
+   
     {
       path: 'miscellaneous',
       loadChildren: () => import('./miscellaneous/miscellaneous.module')

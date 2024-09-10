@@ -16,22 +16,21 @@ import {
   NbTabsetModule, NbUserModule,
 } from '@nebular/theme';
 import { ThemeModule } from '../../@theme/theme.module';
-import { InstitutionSetupComponent } from './institution-setup.component';
-import { InstitutionRoutingModule } from './institution-setup-routing.module';
+
 import { FormsModule as ngFormsModule } from '@angular/forms';
-import { InstitutionInformationComponent } from './institution-information/institution-information.component';
-import { AcademicPeriodComponent } from './academic-period/academic-period.component';
+
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
-
-
+import { ResultComponent } from './result-component';
+import { ResultRoutingModule } from './result-routing.module';
 
 
 
 @NgModule({
   imports: [
+    ResultRoutingModule,
     ThemeModule,
     NbInputModule,
     NbCardModule,
@@ -44,7 +43,6 @@ import { MatInputModule } from '@angular/material/input';
     NbSelectModule,
     NbIconModule,
     ngFormsModule,
-    InstitutionRoutingModule,
     NbTabsetModule,
     NbRouteTabsetModule,
     NbCalendarModule,
@@ -57,12 +55,10 @@ import { MatInputModule } from '@angular/material/input';
 
   ],
   declarations: [
-  InstitutionInformationComponent,
-  InstitutionSetupComponent,
-  AcademicPeriodComponent
+  ResultComponent
   ],
   providers: [
     
   ],
 })
-export class InstitutionSetupModule { }
+export class ResultModule { }
