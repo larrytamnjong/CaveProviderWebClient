@@ -25,6 +25,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
+import { AcademicYearDialogComponent } from './academic-period/academic-year-dialog/academic-year-dialog';
 
 
 
@@ -59,7 +60,8 @@ import { MatInputModule } from '@angular/material/input';
   declarations: [
   InstitutionInformationComponent,
   InstitutionSetupComponent,
-  AcademicPeriodComponent
+  AcademicPeriodComponent,
+  AcademicYearDialogComponent
   ],
   providers: [
     

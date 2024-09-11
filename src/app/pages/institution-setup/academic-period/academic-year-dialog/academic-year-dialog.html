@@ -1,0 +1,26 @@
+<nb-card>
+  <nb-card-header>Add or Update Academic Year</nb-card-header>
+  <nb-card-body>
+    <div class="row">
+      <div class="form-group  col-md-12 col-12">
+        <label for="Name" class="label">Name</label>
+        <input [(ngModel)]="academicYear.name" #name nbInput placeholder="Name" fullWidth />
+      </div>
+      <div class="form-group col-md-12 col-12">
+        <label for="Status" class="label">Is Active</label>
+        <nb-select [(ngModel)]="academicYear.isActive" selected="1" placeholder="Is Active" fullWidth>
+          <nb-option [value]="true">True</nb-option>
+          <nb-option [value]="false">False</nb-option>
+        </nb-select>
+      </div>
+    </div>
+  </nb-card-body>
+  <nb-card-footer>
+    <button class="cancel" nbButton status="warning" (click)="cancel()">
+      Cancel
+    </button>
+    <button nbButton status="primary" (click)="submit(academicYear)">
+      Save
+    </button>
+  </nb-card-footer>
+</nb-card>

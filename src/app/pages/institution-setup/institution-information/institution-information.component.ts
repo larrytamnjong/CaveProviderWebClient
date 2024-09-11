@@ -1,8 +1,6 @@
 import { Component, OnInit, ChangeDetectorRef } from "@angular/core";
-import { NbToastrService, NbComponentStatus } from '@nebular/theme';
-import { DomSanitizer } from '@angular/platform-browser';
-import { MatTableDataSource } from "@angular/material/table";
-import {MatSnackBar} from "@angular/material/snack-bar";
+import { NbToastrService, NbComponentStatus } from "@nebular/theme";
+import { DomSanitizer } from "@angular/platform-browser";
 
 
 import {
@@ -19,7 +17,12 @@ export class InstitutionInformationComponent implements OnInit {
   institutionDetails: Institution = new Institution();
   imageSource: any;
   canSave: boolean = false;
-  constructor(private institutionData: InstitutionData,  private cd: ChangeDetectorRef,private toastService: NbToastrService, private sanitizer: DomSanitizer) {}
+  constructor(
+    private institutionData: InstitutionData,
+    private cd: ChangeDetectorRef,
+    private toastService: NbToastrService,
+    private sanitizer: DomSanitizer
+  ) {}
   ngOnInit(): void {
     this.getInstitutionDetails();
   }
@@ -27,37 +30,37 @@ export class InstitutionInformationComponent implements OnInit {
   getInstitutionDetails() {
     this.institutionData.getInstitutionDetails().subscribe(
       (information: Institution) => {
-        if(information != null){
+        if (information != null) {
           this.institutionDetails = information;
-          this.setImageSource(information.logo); 
+          this.setImageSource(information.logo);
         }
       },
       (error) => {
-        this.showFailureToast('danger');
+        this.showFailureToast("danger");
       }
-      
     );
     this.cd.detectChanges();
   }
 
   addOrUpdateInstitutionDetails() {
-    if (window.confirm('Are you sure you want to update the institution details?')) {
+    if (
+      window.confirm("Are you sure you want to update the institution details?")
+    ) {
       this.institutionData
-      .addOrUpdateInstitutionDetails(this.institutionDetails)
-      .subscribe(
-        (information) => {
-          if(information != null){
-            this.institutionDetails = information;
-            this.showSuccessToast('success');
-            this.setImageSource(information.logo);  
+        .addOrUpdateInstitutionDetails(this.institutionDetails)
+        .subscribe(
+          (information) => {
+            if (information != null) {
+              this.institutionDetails = information;
+              this.showSuccessToast("success");
+              this.setImageSource(information.logo);
+            }
+          },
+          (error) => {
+            this.showFailureToast("danger");
           }
-        },
-        (error) => {
-          this.showFailureToast('danger');
-        }
-      );
-    } 
-    
+        );
+    }
   }
 
   onImageSelected(event: any) {
@@ -66,12 +69,14 @@ export class InstitutionInformationComponent implements OnInit {
     reader.readAsDataURL(file);
     reader.onload = () => {
       this.institutionDetails.logo = reader.result as string;
-     this.setImageSource(this.institutionDetails.logo); 
+      this.setImageSource(this.institutionDetails.logo);
     };
   }
 
   showSuccessToast(status: NbComponentStatus) {
-    this.toastService.show(status, `Institution details updated successfully`, { status });
+    this.toastService.show(status, `Institution details updated successfully`, {
+      status,
+    });
   }
   showFailureToast(status: NbComponentStatus) {
     this.toastService.show(status, `Details where not updated`, { status });
@@ -79,6 +84,5 @@ export class InstitutionInformationComponent implements OnInit {
 
   setImageSource(logo: string) {
     this.imageSource = this.sanitizer.bypassSecurityTrustUrl(logo);
-    };
-  
+  }
 }

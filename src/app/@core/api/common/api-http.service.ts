@@ -1,9 +1,8 @@
- 
 
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { environment } from '../../../environments/environment';
+import { environment } from '../../../../environments/environment';
 
 
 @Injectable()
@@ -26,6 +25,7 @@ export class ApiHttpService {
   }
 
   put(endpoint: string, data, options?): Observable<any> {
+    console.log(data); 
     return this.http.put(`${this.apiUrl}/${endpoint}`, data, options);
   }
 

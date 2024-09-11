@@ -1,66 +1,75 @@
 <h2><i class="fas fa-calendar-alt"></i> Academic Period</h2>
 <div class="row">
-    <div class="col-md-12">
-      <nb-card>
-        <nb-card-header>Make changes to your academic period</nb-card-header>
-        <nb-tabset fullWidth>
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-header>Make changes to your academic period</nb-card-header>
+      <nb-tabset fullWidth>
+        <nb-tab tabTitle="Academic Year">
+          <div class="mat-elevation-z1">
+            <div>
+              <button
+                class="float-right"
+                nbButton
+                status="primary"
+                [disabled]="false"
+                (click)="openAcademicYearDialog()"
+              >
+                <nb-icon icon="plus"></nb-icon>Add Academic Year
+              </button>
+            </div>
+            <mat-form-field appearance="fill" style="width: 100%">
+              <mat-label>Search for Academic Year</mat-label>
+              <input matInput #input />
+            </mat-form-field>
+            <h2 class="ml-3">Academic Years</h2>
+            <table mat-table [dataSource]="dataSource" matSort #table>
+
+              <!-- <ng-container matColumnDef="startDate">
+                <th mat-header-cell *matHeaderCellDef>Start Date</th>
+                <td mat-cell *matCellDef="let element">
+								{{ element.startDate | date: "dd/MM/yyyy" }}
+							</td>
+              </ng-container>
+
+              <ng-container matColumnDef="endDate">
+                <th mat-header-cell *matHeaderCellDef>End Date</th>
+                <td mat-cell *matCellDef="let element">
+								{{ element.endDate | date: "dd/MM/yyyy" }}
+							</td>
+              </ng-container> -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef>Name</th>
+                <td mat-cell *matCellDef="let element">
+								{{ element.name }}
+							</td>
+            </ng-container>
+              <ng-container matColumnDef="isActive">
+                <th mat-header-cell *matHeaderCellDef>Is Active</th>
+                <td mat-cell *matCellDef="let element">
+								{{ element.isActive ? "Yes" : "No" }}
+							</td>
+              </ng-container>
+             
             
-           
-            <nb-tab tabTitle="Academic Year" >
-              <div class="mat-elevation-z1">
-                 <div>
-                  <button class="float-right" nbButton status="primary" [disabled]="false" ><nb-icon icon="plus"></nb-icon>Add Academic Year</button>
-                 </div>
-                <mat-form-field appearance="fill" style="width: 100%">
-                  <mat-label>Search for Academic Year</mat-label>
-                  <input matInput
-                     
-                     
-                       #input />
-                </mat-form-field>
-                <h2 class="ml-3">Academic Periods</h2>
-                <table mat-table [dataSource]="dataSource" matSort #table>
-      
-                  <ng-container matColumnDef="Start Date">
-                    <th mat-header-cell *matHeaderCellDef>Start Date</th>
-                    
-                  </ng-container>
-                  <ng-container matColumnDef="End Date">
-                    <th mat-header-cell *matHeaderCellDef>End Date</th>
-                    
-                  </ng-container>
-                  <ng-container matColumnDef="Is Active">
-                    <th mat-header-cell *matHeaderCellDef>Is Active</th>
-                   
-                  </ng-container>
-                  <ng-container matColumnDef="Name">
-                    <th mat-header-cell *matHeaderCellDef>Name</th>
-                   
-                  </ng-container>
-                  <ng-container matColumnDef="Action" stickyEnd>
-                    <th mat-header-cell
-                      *matHeaderCellDef
-                      style="width: 1%"></th>
-                    <td mat-cell *matCellDef="let element">
-                      <button mat-raised-button color="primary">
-                       Edit Period
-                      </button>
-                    </td>
-                  </ng-container>
-      
-                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                  <tr mat-row
-                    *matRowDef="let row; columns: displayedColumns"></tr>
-                </table>
-                <mat-paginator [pageSizeOptions]="[10, 15, 20, 25]" showFirstLastButtons></mat-paginator>
-              </div>
-               
-            </nb-tab>
+              <ng-container matColumnDef="Action" stickyEnd>
+                <th mat-header-cell *matHeaderCellDef style="width: 1%"></th>
+                <td mat-cell *matCellDef="let element">
+                  <button (click)="openAcademicYearDialog(element)" nbButton color="primary">Edit Academic Year</button>
+                </td>
+              </ng-container> 
 
-            <nb-tab tabTitle="School Terms">
-            </nb-tab>
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+            </table>
+            <mat-paginator
+              [pageSizeOptions]="[10, 15, 20, 25]"
+              showFirstLastButtons
+            ></mat-paginator>
+          </div>
+        </nb-tab>
 
-          </nb-tabset>
-      </nb-card>
-    </div>
+        <nb-tab tabTitle="School Terms"> </nb-tab>
+      </nb-tabset>
+    </nb-card>
   </div>
+</div>

@@ -2,7 +2,10 @@
     "typescript.tsdk": "./node_modules/typescript/lib",
     "tslint.enable": false,
     "cSpell.words": [
+        "addacademicyear",
         "addorupdateinstitutiondetails",
+        "deleteacademicyear",
+        "getacademicyears",
         "getcurrentuserroles",
         "getinstitutiondetails",
         "getsignedinuser",
@@ -13,7 +16,8 @@
         "getuserrole",
         "signin",
         "signout",
-        "Toastr"
+        "Toastr",
+        "updateacademicyear"
     ],
     "angular.enable-strict-mode-prompt": false
 }

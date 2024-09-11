@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IdentityHttpService } from './identity-http.service';
+import { IdentityHttpService } from './common/identity-http.service';
 
 
 
