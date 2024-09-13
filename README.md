@@ -28,4 +28,6 @@ Before running this code, you should have experience with the following:
    ```
    npm start
    ```
+   ```
    visit http://localhost:4200/
+   ```
