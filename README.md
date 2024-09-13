@@ -29,5 +29,18 @@ Before running this code, you should have experience with the following:
    npm start
    ```
    ```
-   visit http://localhost:4200/
+   http://localhost:4200/
    ```
+### What to work on
+Currently, the project has 9 Modules 
+
+1. Institution Setup
+2. Staff
+3. Student
+4. Report Card
+5. Transcript
+6. Bursary
+7. Accounting
+8. Settings
+   
+If you want to contribute, the first thing is to set up the project and then open an issue with a feature request or generally on anything you want to work and we will start a discussion from there.
