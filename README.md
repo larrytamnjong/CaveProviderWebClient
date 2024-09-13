@@ -31,7 +31,7 @@ Before running this code, you should have experience with the following:
    ```
    http://localhost:4200/
    ```
-### What to work on
+## What to work on
 Currently, the project has 9 Modules 
 
 1. Institution Setup
